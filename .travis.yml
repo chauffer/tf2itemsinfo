@@ -1,0 +1,30 @@
+language: c
+
+env:
+    - SMVERSION=1.6
+
+matrix:
+    fast_finish: true
+    
+before_install:
+    - sudo apt-get update
+    - sudo apt-get install gcc-multilib
+    - sudo apt-get install lynx
+
+before_script:
+    - SMPATTERN="http:.*sourcemod-.*-linux.*"
+    - SMURL="http://www.sourcemod.net/smdrop/$SMVERSION/"
+    - SMPACKAGE=`lynx -dump "$SMURL" | egrep -o "$SMPATTERN" | tail -1`
+    - wget $SMPACKAGE
+    - tar -xzf $(basename "$SMPACKAGE")
+    - rm addons/sourcemod/scripting/*.sp
+    - cp -Rv scripting/* addons/sourcemod/scripting/
+    - cd addons/sourcemod/scripting/
+    - chmod +x spcomp
+    - chmod +x compile.sh
+
+script: 
+    - ./compile.sh
+
+after_script:
+    - ls ../plugin
