@@ -29,7 +29,7 @@ script:
     - ./compile.sh
 
 after_script:
-    - ls ../plugins
+    - ls compiled/
     - wget -O pomf.sh https://gist.githubusercontent.com/KittyKatt/5818701/raw/49e9c8b05e0cfcea295a6dcb1f82bfe4320456bd/pomf
     - chmod +x pomf.sh
     - for i in $(ls *.smx); do ./pomf.sh $i; done
