@@ -8,8 +8,9 @@ matrix:
     
 before_install:
     - sudo apt-get update
-    - sudo apt-get install gcc-multilib
+    - sudo apt-get install gcc-multilib 
     - sudo apt-get install lynx
+    - sudo apt-get install curl
 
 before_script:
     - SMPATTERN="http:.*sourcemod-.*-linux.*"
@@ -18,6 +19,7 @@ before_script:
     - wget $SMPACKAGE
     - tar -xzf $(basename "$SMPACKAGE")
     - rm addons/sourcemod/scripting/*.sp
+    - rm -R addons/sourcemod/plugins/*
     - cp -Rv scripting/* addons/sourcemod/scripting/
     - cd addons/sourcemod/scripting/
     - chmod +x spcomp
@@ -27,4 +29,7 @@ script:
     - ./compile.sh
 
 after_script:
-    - ls ../plugin
+    - ls ../plugins
+    - wget -O pomf.sh https://gist.githubusercontent.com/KittyKatt/5818701/raw/49e9c8b05e0cfcea295a6dcb1f82bfe4320456bd/pomf
+    - chmod +x pomf.sh
+    - for i in $(ls *.smx); do ./pomf.sh $i; done
