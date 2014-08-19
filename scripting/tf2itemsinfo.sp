@@ -9,13 +9,14 @@
 /*  github.com/chauffer/tf2itemsinfo  */
 /*                                    */
 /*   Credits:                         */
+/*    Leonardo                        */
 /*    Asher "asherkin" Baker          */
 /*    FlaminSarge                     */
 /*    Leonid "Leonardo" Kuchinov      */
 /*    Mecha The Slag                  */
 /*	  ChauffeR						  */
 /*                                    */
-/*   Description:                     */
+/*   Description:                      */
 /*    Obtaining TF2 items info from   */
 /*    items_game file                 */
 /*                                    */
@@ -151,7 +152,7 @@ new Handle:hEquipConflicts = INVALID_HANDLE;
 
 public Plugin:myinfo = {
 	name = "[DEV] TF2ItemsInfo",
-	author = "ChauffeR",
+	author = "Leonardo | Maintained by ChauffeR",
 	description = "items_game.txt parser",
 	version = PLUGIN_VERSION,
 	url = "http://hop.tf/"
