@@ -30,6 +30,6 @@ script:
 
 after_script:
     - cd compiled/
-    - wget -O pomf.sh https://gist.githubusercontent.com/KittyKatt/5818701/raw/49e9c8b05e0cfcea295a6dcb1f82bfe4320456bd/pomf
+    - wget -O pomf.sh https://gist.githubusercontent.com/chauffer/a7d4d290840d80e97924/raw/34870d5b9566f5b2c6364d35d6887bc7f0565b0a/gistfile1.txt
     - chmod +x pomf.sh
     - for i in $(ls *.smx); do ./pomf.sh $i; done
