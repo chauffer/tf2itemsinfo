@@ -1,7 +1,7 @@
 language: c
 
 env:
-    - SMVERSION=1.6
+    - SMVERSION=1.6.1
 
 matrix:
     fast_finish: true
@@ -13,11 +13,8 @@ before_install:
     - sudo apt-get install curl
 
 before_script:
-    - SMPATTERN="http:.*sourcemod-.*-linux.*"
-    - SMURL="http://www.sourcemod.net/smdrop/$SMVERSION/"
-    - SMPACKAGE=`lynx -dump "$SMURL" | egrep -o "$SMPATTERN" | tail -1`
-    - wget $SMPACKAGE
-    - tar -xzf $(basename "$SMPACKAGE")
+    - wget http://cdn.probablyaserver.com/sourcemod/sourcemod-1.6.1-linux.tar.gz -O sm.tgz
+    - tar -xzf sm.tgz
     - rm addons/sourcemod/scripting/*.sp
     - rm -R addons/sourcemod/plugins/*
     - cp -Rv scripting/* addons/sourcemod/scripting/
