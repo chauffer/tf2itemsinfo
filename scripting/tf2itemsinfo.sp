@@ -9,14 +9,14 @@
 /*  github.com/chauffer/tf2itemsinfo  */
 /*                                    */
 /*   Credits:                         */
-/*    Leonardo                        */
 /*    Asher "asherkin" Baker          */
+/*    ChauffeR                        */
 /*    FlaminSarge                     */
 /*    Leonid "Leonardo" Kuchinov      */
 /*    Mecha The Slag                  */
-/*	  ChauffeR						  */
+/*    ReFlexPoison                    */
 /*                                    */
-/*   Description:                      */
+/*   Description:                     */
 /*    Obtaining TF2 items info from   */
 /*    items_game file                 */
 /*                                    */
