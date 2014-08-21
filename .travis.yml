@@ -18,6 +18,11 @@ before_script:
     - rm addons/sourcemod/scripting/*.sp
     - rm -R addons/sourcemod/plugins/*
     - cp -Rv scripting/* addons/sourcemod/scripting/
+    - TF2ITEMSURL="http://builds.limetech.org/files/"
+    - TF2ITEMSPATTERN="http:.*tf2items-.*-.*-linux.zip"
+    - TF2ITEMSPACKAGE=`lynx -dump "$TF2ITEMSURL" | egrep -o "$TF2ITEMSPATTERN" | tail -1`
+    - wget $TF2ITEMSPACKAGE
+    - unzip $(basename "$TF2ITEMSPACKAGE")
     - cd addons/sourcemod/scripting/
     - chmod +x spcomp
     - chmod +x compile.sh
