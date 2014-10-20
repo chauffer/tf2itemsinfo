@@ -4,10 +4,10 @@
 	{
 		"Version"
 		{
-			"Latest"	"1.9"
+			"Latest"	"1.9.1"
 		}
 
-		"Notes"	"Make it work with the new items_game file"
+		"Notes"	"Update parse file, tf2_scripts_000.vpk to scripts/items_game.txt"
 	}
 
 	"Files"

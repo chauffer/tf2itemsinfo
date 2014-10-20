@@ -59,7 +59,7 @@
 
 #pragma semicolon 1
 
-#define PLUGIN_VERSION		"1.9"
+#define PLUGIN_VERSION		"1.9.1"
 #define PLUGIN_UPDATE_URL	"http://cdn.hop.tf/tf2itemsinfo/updatelist.txt"
 
 #define SEARCH_MINLENGTH	2
@@ -1116,7 +1116,7 @@ PrecacheItemSchema()
 		CloseHandle( g_hEffects );
 	g_hEffects = CreateArray();
 
-	decl String:strFilePath[PLATFORM_MAX_PATH] = "tf2_scripts_000.vpk";
+	decl String:strFilePath[PLATFORM_MAX_PATH] = "scripts/items/items_game.txt";
 	if( !FileExists( strFilePath , true) )
 	{
 		Error( ERROR_BREAKP|ERROR_LOG, _, "Couldn't found file: %s", strFilePath );
